@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.camel-smook-edi</groupId>
-  <artifactId>edi-back-and-forth</artifactId>
+  <artifactId>edi-xml-back-and-forth-prototype</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
 

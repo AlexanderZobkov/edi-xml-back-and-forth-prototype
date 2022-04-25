@@ -15,16 +15,16 @@ public class MySpringBootRouter extends EndpointRouteBuilder {
     public void configure() throws Exception {
         from(file(inputDir).includeExt("edi")).routeId("edi-route")
                 .log(LoggingLevel.INFO, "EDI-input: ${body}")
-                .to("smooks://edi-to-xml-smooks-config.xml")
+                .to("smooks://edi-to-xml-smooks-config.xml").id("edi-to-xml")
                 .log(LoggingLevel.INFO, "EDI-xml: ${body}")
-                .to("smooks://xml-to-edi-smooks-config.xml")
+                .to("smooks://xml-to-edi-smooks-config.xml").id("xml-to-edi")
                 .log(LoggingLevel.INFO, "EDI-output: ${body}");
 
         from(file(inputDir).includeExt("edifact")).routeId("edifact-route")
                 .log(LoggingLevel.INFO, "EDIFACT-input: ${body}")
-                .to("smooks://edifact-to-xml-smooks-config.xml")
+                .to("smooks://edifact-to-xml-smooks-config.xml").id("edifact-to-xml")
                 .log(LoggingLevel.INFO, "EDIFACT-xml: ${body}")
-                .to("smooks://xml-to-edifact-smooks-config.xml")
+                .to("smooks://xml-to-edifact-smooks-config.xml").id("xml-to-edifact")
                 .log(LoggingLevel.INFO, "EDIFACT-output: ${body}");
     }
 

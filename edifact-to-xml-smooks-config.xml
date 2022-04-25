@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<smooks-resource-list xmlns="https://www.smooks.org/xsd/smooks-2.0.xsd"
+                      xmlns:core="https://www.smooks.org/xsd/smooks/smooks-core-1.6.xsd"
+                      xmlns:edifact="https://www.smooks.org/xsd/smooks/edifact-2.0.xsd">
+
+    <edifact:parser schemaURI="/d03b/EDIFACT-Messages.dfdl.xsd">
+        <edifact:messageTypes>
+            <edifact:messageType>PAXLST</edifact:messageType>
+        </edifact:messageTypes>
+    </edifact:parser>
+
+    <core:exports>
+        <core:result type="org.smooks.io.payload.StringResult"/>
+    </core:exports>
+
+</smooks-resource-list>
